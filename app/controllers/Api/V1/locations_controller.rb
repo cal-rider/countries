@@ -24,6 +24,8 @@ module Api
 
             private
 
+
+
             def location_params
                 params.require(:location).permit(:name, :description, :Trip_id, :priority)
             end
