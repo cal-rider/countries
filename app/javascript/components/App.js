@@ -8,7 +8,7 @@ const App = () => {
     return (<Switch>
     
                 <Route exact path="/" component={Trips}/>
-                <Route exact path="/:slug" component={Trip}/>
+                <Route exact path="/trips/:slug" component={Trip}/>
             </Switch>)
 }
 

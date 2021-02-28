@@ -53,7 +53,7 @@ const MyTrip = (props) => {
             <Name>{props.attributes.name}</Name>
             <Desc>{props.attributes.description}</Desc>
             <MyLink>
-                <Link to={`/trips/${props.attributes.slug}`}>Check it out!</Link>
+                <Link to={"/trips/"+ props.attributes.slug}>Check it out!</Link>
             </MyLink>
         </Card>
     )
