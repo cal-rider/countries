@@ -13,7 +13,7 @@ const LocationForm = (props) => {
     return (
         <LocationsContainer>
             <form onSubmit={props.handleSubmit}>
-                <div>Where else would you like to go on your "{props.attributes.name}" trip?</div>
+                <div>Where else would you like to go on your great "{props.attributes.name}" trip?</div>
                 <div className = "Field">
                     <input onChange={props.handleChange} value ={props.location.name} type="text" name="name" placeholder="Location Name"/>
                     <input onChange={props.handleChange} value ={props.location.description} type="text" name="description" placeholder="Description"/>
@@ -24,5 +24,7 @@ const LocationForm = (props) => {
 
     )
 
-}
+} 
+
+
 export default LocationForm
