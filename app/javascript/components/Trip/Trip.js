@@ -2,6 +2,7 @@ import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import Header from './Header'
 import LocationForm from './LocationForm'
+import Location from './Location'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -63,7 +64,28 @@ const handleSubmit = (e) => {
       setLocation({name: '', description:''})
     })
     .catch(resp => {})
+
+    
 }
+
+
+//Add all of the existing locations they are called in the trip.included above
+
+let locations
+if (loaded && trip.included) {
+     locations = trip.included.map( (item, index) => {
+         console.log(item.attributes)
+         
+        return (
+        <Location
+            key = {index}
+            attributes = {item.attributes}
+        />
+        )
+    })
+}
+
+
     return  (
     <Wrapper>
         {
@@ -72,7 +94,7 @@ const handleSubmit = (e) => {
                 <Column>
                     <Main>
                         <Header attributes={trip.data.attributes}/>
-                    <div className="locations"></div>
+                    {locations}
                     </Main>
                 </Column>
                 <Column>
@@ -84,8 +106,9 @@ const handleSubmit = (e) => {
                     />
                 </Column>
             </Fragment>
-        }  
-    </Wrapper>)
+         }  
+        </Wrapper>
+    )
     
 }
 export default Trip;
