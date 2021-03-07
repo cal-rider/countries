@@ -1,6 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react'
 import axios from 'axios'
 import Header from './Header'
+import Searched from './Searched'
 import LocationForm from './LocationForm'
 import Location from './Location'
 import styled from 'styled-components'
@@ -9,8 +10,11 @@ const Wrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 2fr;
+  
 `
+//grid-template-columns: repeat(2, 1fr);
+
 const Column = styled.div`
     background: #fff;
     height: 100vh;
@@ -97,6 +101,7 @@ if (loaded && trip.included) {
                     {locations}
                     </Main>
                 </Column>
+                
                 <Column>
                     <LocationForm
                         handleChange={handleChange}

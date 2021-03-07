@@ -46,8 +46,8 @@ const Wrapper = styled.div`
 `
 
 const AddButton = styled.button`
-    color: ##00cc00;
-    background: #333;
+    color: #fff;
+    background: #006400;
     border-radius: 4px;
     padding: 12px;
     font-size: 18px;
@@ -67,16 +67,14 @@ const AddButton = styled.button`
 
 const LocationForm = (props) => {
     return (
-
-            <Wrapper>
-                
+        <Wrapper>    
             <form onSubmit={props.handleSubmit}>
                 <Headline>Add a country to your "{props.attributes.name}" trip?</Headline>
                     <Field> <input onChange={props.handleChange} value ={props.location.name} type="text" name="name" placeholder="Country Name"/></Field>
                     <Field><input onChange={props.handleChange} value ={props.location.description} type="text" name="description" placeholder="Notes"/></Field>
                 <AddButton>Add Location</AddButton>
             </form>
-            </Wrapper>
+        </Wrapper>
     )
 
 } 
