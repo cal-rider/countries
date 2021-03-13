@@ -3,6 +3,7 @@ import axios from 'axios'
 import Header from './Header'
 import LocationForm from './LocationForm'
 import Location from './Location'
+import SearchForm from './SearchForm'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
@@ -72,12 +73,14 @@ const handleSubmit = (e) => {
 }
 
 
+
+
 //Add all of the existing locations they are called in the trip.included above
 
 let locations
 if (loaded && trip.included) {
      locations = trip.included.map( (item, index) => {
-         console.log(item.attributes)
+       
          
         return (
         <Location
@@ -102,12 +105,15 @@ if (loaded && trip.included) {
                 </Column>
                 
                 <Column>
+                <SearchForm/>
+
                     <LocationForm
                         handleChange={handleChange}
                         handleSubmit={handleSubmit}
                         attributes={trip.data.attributes}
                         location={location}
                     />
+                  
                 </Column>
             </Fragment>
          }  

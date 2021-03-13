@@ -18,7 +18,7 @@ const Description = styled.div`
 
 
 const Location = (props) => {
-    console.log(props.attributes)
+    
 
     const {name, description} = props.attributes
     

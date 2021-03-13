@@ -14019,3 +14019,2159 @@ Processing by Api::V1::TripsController#show as HTML
 Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 4344)
 
 
+Started POST "/api/v1/locations" for ::1 at 2021-03-13 14:54:49 -0500
+Processing by Api::V1::LocationsController#create as HTML
+  Parameters: {"location"=>{"name"=>"Name", "description"=>"NAme", "Trip_id"=>"1"}}
+Can't verify CSRF token authenticity.
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+  [1m[36mLocation Create (0.7ms)[0m  [1m[32mINSERT INTO "locations" ("name", "description", "Trip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "Name"], ["description", "NAme"], ["Trip_id", 1], ["created_at", "2021-03-13 19:54:49.998502"], ["updated_at", "2021-03-13 19:54:49.998502"]]
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+Completed 200 OK in 11ms (Views: 0.1ms | ActiveRecord: 1.7ms | Allocations: 5076)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:07:12 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: b01994f2bb71d71da8c4
+Version: webpack 4.46.0
+Time: 1503ms
+Built at: 03/13/2021 3:07:14 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-2f5ab0a3e6147deb479b.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-2f5ab0a3e6147deb479b.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-2f5ab0a3e6147deb479b.js js/index-2f5ab0a3e6147deb479b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+ERROR in ./app/javascript/components/Trip/SearchBox.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/calrider/Documents/GitHub/countries/app/javascript/components/Trip/SearchBox.js: Unexpected token (7:29)
+
+   5 |         <input type= 'search'
+   6 |         className = 'search'
+>  7 |         placeholder = {props.}
+     |                              ^
+   8 |         onChange ={props.handleChange}
+   9 |         />
+  10 |     )
+    at Object._raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:776:17)
+    at Object.raiseWithData (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:769:17)
+    at Object.raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:737:17)
+    at Object.unexpected (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:9675:16)
+    at Object.parseIdentifierName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11838:18)
+    at Object.parseIdentifier (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11811:23)
+    at Object.parseMaybePrivateName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11139:19)
+    at Object.parseMember (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10702:63)
+    at Object.parseSubscript (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10690:19)
+    at Object.parseSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10661:19)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10650:17)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+    at Object.parseMaybeUnary (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10602:23)
+    at Object.parseExprOps (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10463:23)
+    at Object.parseMaybeConditional (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10437:23)
+    at Object.parseMaybeAssign (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10400:21)
+    at Object.parseExpressionBase (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10345:23)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10339:39
+    at Object.allowInAnd (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12043:12)
+    at Object.parseExpression (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10339:17)
+    at Object.jsxParseExpressionContainer (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5027:31)
+    at Object.jsxParseAttributeValue (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:4994:21)
+    at Object.jsxParseAttribute (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5046:44)
+    at Object.jsxParseOpeningElementAfterName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5066:28)
+    at Object.jsxParseOpeningElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5059:17)
+    at Object.jsxParseElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5091:33)
+    at Object.jsxParseElement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5165:17)
+    at Object.parseExprAtom (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5172:19)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10644:23)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+ @ ./app/javascript/components/Trip/Trip.js 40:0-36 160:38-47
+ @ ./app/javascript/components/App.js
+ @ ./app/javascript/packs/index.jsx
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3004ms (Views: 3003.9ms | ActiveRecord: 0.0ms | Allocations: 6068)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:07:22 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: ae36f1359ab22db61b0b
+Version: webpack 4.46.0
+Time: 1449ms
+Built at: 03/13/2021 3:07:25 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-6ccca733120e3962e43c.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-6ccca733120e3962e43c.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-6ccca733120e3962e43c.js js/index-6ccca733120e3962e43c.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+ERROR in ./app/javascript/components/Trip/SearchBox.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/calrider/Documents/GitHub/countries/app/javascript/components/Trip/SearchBox.js: Unexpected token (7:29)
+
+   5 |         <input type= 'search'
+   6 |         className = 'search'
+>  7 |         placeholder = {props.}
+     |                              ^
+   8 |         onChange ={props.handleChange}
+   9 |         />
+  10 |     )
+    at Object._raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:776:17)
+    at Object.raiseWithData (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:769:17)
+    at Object.raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:737:17)
+    at Object.unexpected (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:9675:16)
+    at Object.parseIdentifierName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11838:18)
+    at Object.parseIdentifier (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11811:23)
+    at Object.parseMaybePrivateName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11139:19)
+    at Object.parseMember (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10702:63)
+    at Object.parseSubscript (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10690:19)
+    at Object.parseSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10661:19)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10650:17)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+    at Object.parseMaybeUnary (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10602:23)
+    at Object.parseExprOps (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10463:23)
+    at Object.parseMaybeConditional (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10437:23)
+    at Object.parseMaybeAssign (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10400:21)
+    at Object.parseExpressionBase (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10345:23)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10339:39
+    at Object.allowInAnd (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12043:12)
+    at Object.parseExpression (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10339:17)
+    at Object.jsxParseExpressionContainer (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5027:31)
+    at Object.jsxParseAttributeValue (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:4994:21)
+    at Object.jsxParseAttribute (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5046:44)
+    at Object.jsxParseOpeningElementAfterName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5066:28)
+    at Object.jsxParseOpeningElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5059:17)
+    at Object.jsxParseElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5091:33)
+    at Object.jsxParseElement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5165:17)
+    at Object.parseExprAtom (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5172:19)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10644:23)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+ @ ./app/javascript/components/Trip/Trip.js 40:0-36 160:38-47
+ @ ./app/javascript/components/App.js
+ @ ./app/javascript/packs/index.jsx
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2756ms (Views: 2755.8ms | ActiveRecord: 0.0ms | Allocations: 6046)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:08:00 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: bd5f4a8a704a716b6e11
+Version: webpack 4.46.0
+Time: 1450ms
+Built at: 03/13/2021 3:08:02 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-554d624fa611bc0373f4.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-554d624fa611bc0373f4.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-554d624fa611bc0373f4.js js/index-554d624fa611bc0373f4.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+ERROR in ./app/javascript/components/Trip/SearchBox.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/calrider/Documents/GitHub/countries/app/javascript/components/Trip/SearchBox.js: Unexpected token (7:29)
+
+   5 |         <input type= 'search'
+   6 |         className = 'search'
+>  7 |         placeholder = {props.}
+     |                              ^
+   8 |         onChange ={props.handleChange}
+   9 |         />
+  10 |     )
+    at Object._raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:776:17)
+    at Object.raiseWithData (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:769:17)
+    at Object.raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:737:17)
+    at Object.unexpected (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:9675:16)
+    at Object.parseIdentifierName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11838:18)
+    at Object.parseIdentifier (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11811:23)
+    at Object.parseMaybePrivateName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11139:19)
+    at Object.parseMember (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10702:63)
+    at Object.parseSubscript (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10690:19)
+    at Object.parseSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10661:19)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10650:17)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+    at Object.parseMaybeUnary (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10602:23)
+    at Object.parseExprOps (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10463:23)
+    at Object.parseMaybeConditional (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10437:23)
+    at Object.parseMaybeAssign (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10400:21)
+    at Object.parseExpressionBase (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10345:23)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10339:39
+    at Object.allowInAnd (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12043:12)
+    at Object.parseExpression (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10339:17)
+    at Object.jsxParseExpressionContainer (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5027:31)
+    at Object.jsxParseAttributeValue (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:4994:21)
+    at Object.jsxParseAttribute (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5046:44)
+    at Object.jsxParseOpeningElementAfterName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5066:28)
+    at Object.jsxParseOpeningElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5059:17)
+    at Object.jsxParseElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5091:33)
+    at Object.jsxParseElement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5165:17)
+    at Object.parseExprAtom (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5172:19)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10644:23)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+ @ ./app/javascript/components/Trip/Trip.js 40:0-36
+ @ ./app/javascript/components/App.js
+ @ ./app/javascript/packs/index.jsx
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2750ms (Views: 2749.9ms | ActiveRecord: 0.0ms | Allocations: 6047)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:08:36 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 22f4e3224ed8a28010ac
+Version: webpack 4.46.0
+Time: 1263ms
+Built at: 03/13/2021 3:08:38 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-95cbb6706b87d92b8eb6.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-95cbb6706b87d92b8eb6.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-95cbb6706b87d92b8eb6.js js/index-95cbb6706b87d92b8eb6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+ERROR in ./app/javascript/components/Trip/SearchBox.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/calrider/Documents/GitHub/countries/app/javascript/components/Trip/SearchBox.js: JSX attributes must only be assigned a non-empty expression (7:22)
+
+   5 |         <input type= 'search'
+   6 |         className = 'search'
+>  7 |         placeholder = {}
+     |                       ^
+   8 |         onChange ={props.handleChange}
+   9 |         />
+  10 |     )
+    at Object._raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:776:17)
+    at Object.raiseWithData (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:769:17)
+    at Object.raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:737:17)
+    at Object.jsxParseAttributeValue (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:4997:16)
+    at Object.jsxParseAttribute (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5046:44)
+    at Object.jsxParseOpeningElementAfterName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5066:28)
+    at Object.jsxParseOpeningElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5059:17)
+    at Object.jsxParseElementAt (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5091:33)
+    at Object.jsxParseElement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5165:17)
+    at Object.parseExprAtom (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5172:19)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10644:23)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+    at Object.parseMaybeUnary (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10602:23)
+    at Object.parseExprOps (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10463:23)
+    at Object.parseMaybeConditional (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10437:23)
+    at Object.parseMaybeAssign (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10400:21)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10367:39
+    at Object.allowInAnd (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12043:12)
+    at Object.parseMaybeAssignAllowIn (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10367:17)
+    at Object.parseParenAndDistinguishExpression (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:11246:28)
+    at Object.parseExprAtom (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10964:21)
+    at Object.parseExprAtom (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:5177:20)
+    at Object.parseExprSubscripts (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10644:23)
+    at Object.parseUpdate (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10624:21)
+    at Object.parseMaybeUnary (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10602:23)
+    at Object.parseExprOps (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10463:23)
+    at Object.parseMaybeConditional (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10437:23)
+    at Object.parseMaybeAssign (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10400:21)
+    at Object.parseExpressionBase (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10345:23)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10339:39
+ @ ./app/javascript/components/Trip/Trip.js 40:0-36
+ @ ./app/javascript/components/App.js
+ @ ./app/javascript/packs/index.jsx
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2392ms (Views: 2391.7ms | ActiveRecord: 0.0ms | Allocations: 6047)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:08:48 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 5cc8aa8a13121b3e348d
+Version: webpack 4.46.0
+Time: 1304ms
+Built at: 03/13/2021 3:08:51 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-39202dd2fd2e708a6ae9.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-39202dd2fd2e708a6ae9.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-39202dd2fd2e708a6ae9.js js/index-39202dd2fd2e708a6ae9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2706ms (Views: 2705.7ms | ActiveRecord: 0.0ms | Allocations: 6120)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:08:51 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 4402)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:08:58 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 5a7de0db060429e890a2
+Version: webpack 4.46.0
+Time: 1459ms
+Built at: 03/13/2021 3:09:00 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-414b4b0e3be2b04c40e6.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-414b4b0e3be2b04c40e6.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-414b4b0e3be2b04c40e6.js js/index-414b4b0e3be2b04c40e6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2764ms (Views: 2763.4ms | ActiveRecord: 0.0ms | Allocations: 6128)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:09:01 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 12ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4444)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:10:01 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 593abef5b8775c59200a
+Version: webpack 4.46.0
+Time: 1462ms
+Built at: 03/13/2021 3:10:03 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-cacda577cba73b25921b.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-cacda577cba73b25921b.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-cacda577cba73b25921b.js js/index-cacda577cba73b25921b.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2863ms (Views: 2861.4ms | ActiveRecord: 0.0ms | Allocations: 6122)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:10:04 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 13ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4381)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:12:39 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: 7ffbef704691fcef4b8a
+Version: webpack 4.46.0
+Time: 1248ms
+Built at: 03/13/2021 3:12:41 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-f4fffb429ed679496851.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-f4fffb429ed679496851.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-f4fffb429ed679496851.js js/index-f4fffb429ed679496851.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+ERROR in ./app/javascript/components/Trip/SearchBox.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/calrider/Documents/GitHub/countries/app/javascript/components/Trip/SearchBox.js: Identifier 'Wrapper' has already been declared (15:6)
+
+  13 |     border:1px solid #e6e6e6;
+  14 | `
+> 15 | const Wrapper = styled.div`
+     |       ^
+  16 |     background: #fff;
+  17 |     padding: 20px;
+  18 |     background: #000;
+    at Object._raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:776:17)
+    at Object.raiseWithData (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:769:17)
+    at Object.raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:737:17)
+    at ScopeHandler.checkRedeclarationInScope (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:1453:12)
+    at ScopeHandler.declareName (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:1419:12)
+    at Object.checkLVal (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:10202:24)
+    at Object.parseVarId (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12880:10)
+    at Object.parseVar (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12855:12)
+    at Object.parseVarStatement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12670:10)
+    at Object.parseStatementContent (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12262:21)
+    at Object.parseStatement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12195:17)
+    at Object.parseBlockOrModuleBlockBody (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12777:25)
+    at Object.parseBlockBody (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12768:10)
+    at Object.parseProgram (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12129:10)
+    at Object.parseTopLevel (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12120:25)
+    at Object.parse (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:13836:10)
+    at parse (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:13889:38)
+    at parser (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/transformation/normalize-file.js:99:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+    at Function.transform (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/transform.js:27:41)
+    at transform.next (<anonymous>)
+    at step (/Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:261:32)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:223:11)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:189:28
+    at /Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/gensync-utils/async.js:72:7
+ @ ./app/javascript/components/Trip/Trip.js 40:0-36 160:38-47
+ @ ./app/javascript/components/App.js
+ @ ./app/javascript/packs/index.jsx
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2423ms (Views: 2422.4ms | ActiveRecord: 0.0ms | Allocations: 6044)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:13:03 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: a207f5b43354d66d5dd9
+Version: webpack 4.46.0
+Time: 1314ms
+Built at: 03/13/2021 3:13:06 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-18ad9a560a0dee6ed2dc.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-18ad9a560a0dee6ed2dc.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-18ad9a560a0dee6ed2dc.js js/index-18ad9a560a0dee6ed2dc.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2709ms (Views: 2708.3ms | ActiveRecord: 0.0ms | Allocations: 6124)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:13:06 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 4422)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:13:39 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 714487091248125185c0
+Version: webpack 4.46.0
+Time: 1316ms
+Built at: 03/13/2021 3:13:41 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-7a3c418af7661281c3b1.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-7a3c418af7661281c3b1.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-7a3c418af7661281c3b1.js js/index-7a3c418af7661281c3b1.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2721ms (Views: 2720.3ms | ActiveRecord: 0.0ms | Allocations: 6120)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:13:42 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 4414)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:13:53 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 831168777f1c17cc0a48
+Version: webpack 4.46.0
+Time: 1312ms
+Built at: 03/13/2021 3:13:56 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-ea71989ac59e7db7ba49.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-ea71989ac59e7db7ba49.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-ea71989ac59e7db7ba49.js js/index-ea71989ac59e7db7ba49.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2705ms (Views: 2704.1ms | ActiveRecord: 0.0ms | Allocations: 6123)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:13:56 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.4ms | ActiveRecord: 0.4ms | Allocations: 4464)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:17:17 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: c9aef2d1f5c6544ddc13
+Version: webpack 4.46.0
+Time: 1472ms
+Built at: 03/13/2021 3:17:20 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-43d4d9d93aa92d11d0bb.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-43d4d9d93aa92d11d0bb.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-43d4d9d93aa92d11d0bb.js js/index-43d4d9d93aa92d11d0bb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2942ms (Views: 2941.3ms | ActiveRecord: 0.0ms | Allocations: 6128)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:17:37 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: c9aef2d1f5c6544ddc13
+Version: webpack 4.46.0
+Time: 1451ms
+Built at: 03/13/2021 3:17:40 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-43d4d9d93aa92d11d0bb.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-43d4d9d93aa92d11d0bb.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-43d4d9d93aa92d11d0bb.js js/index-43d4d9d93aa92d11d0bb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2765ms (Views: 2765.0ms | ActiveRecord: 0.0ms | Allocations: 6121)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:18:01 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: c9aef2d1f5c6544ddc13
+Version: webpack 4.46.0
+Time: 1453ms
+Built at: 03/13/2021 3:18:04 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-43d4d9d93aa92d11d0bb.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-43d4d9d93aa92d11d0bb.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-43d4d9d93aa92d11d0bb.js js/index-43d4d9d93aa92d11d0bb.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2757ms (Views: 2756.0ms | ActiveRecord: 0.0ms | Allocations: 6119)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:18:50 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.5ms | ActiveRecord: 0.0ms | Allocations: 4890)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:19:00 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: c0fa490817ac15c69094
+Version: webpack 4.46.0
+Time: 1226ms
+Built at: 03/13/2021 3:19:02 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-e7bf8450ef69c4046b8c.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-e7bf8450ef69c4046b8c.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-e7bf8450ef69c4046b8c.js js/index-e7bf8450ef69c4046b8c.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 76 hidden modules
+
+ERROR in ./app/javascript/components/Trip/Trip.js
+Module not found: Error: Can't resolve './SearchBox' in '/Users/calrider/Documents/GitHub/countries/app/javascript/components/Trip'
+ @ ./app/javascript/components/Trip/Trip.js 40:0-36 160:38-47
+ @ ./app/javascript/components/App.js
+ @ ./app/javascript/packs/index.jsx
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2361ms (Views: 2360.5ms | ActiveRecord: 0.0ms | Allocations: 6039)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:19:23 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: e598669d6f24fd229f7b
+Version: webpack 4.46.0
+Time: 1311ms
+Built at: 03/13/2021 3:19:26 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-3b0fe828986f0b22a892.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-3b0fe828986f0b22a892.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-3b0fe828986f0b22a892.js js/index-3b0fe828986f0b22a892.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2709ms (Views: 2708.1ms | ActiveRecord: 0.0ms | Allocations: 6124)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:19:35 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 4897)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:20:24 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: d35ac04a3eb6c8e2fa90
+Version: webpack 4.46.0
+Time: 1320ms
+Built at: 03/13/2021 3:20:27 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-7209f702788301f31001.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-7209f702788301f31001.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-7209f702788301f31001.js js/index-7209f702788301f31001.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2717ms (Views: 2716.0ms | ActiveRecord: 0.0ms | Allocations: 6128)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:20:27 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 24ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 4441)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:24:53 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: ef3aa8ffe3ebfa156086
+Version: webpack 4.46.0
+Time: 1483ms
+Built at: 03/13/2021 3:24:56 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-e38bf8ba878dd3390ab2.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-e38bf8ba878dd3390ab2.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-e38bf8ba878dd3390ab2.js js/index-e38bf8ba878dd3390ab2.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2827ms (Views: 2826.7ms | ActiveRecord: 0.0ms | Allocations: 6130)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:24:56 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4383)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:25:50 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: bdc5b94fdfbd97dfa10b
+Version: webpack 4.46.0
+Time: 1490ms
+Built at: 03/13/2021 3:25:52 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-047dbc9f4c5db39bdbe9.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-047dbc9f4c5db39bdbe9.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-047dbc9f4c5db39bdbe9.js js/index-047dbc9f4c5db39bdbe9.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2800ms (Views: 2799.6ms | ActiveRecord: 0.0ms | Allocations: 6120)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:25:53 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.5ms | Allocations: 4352)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:27:21 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 194fc5e08e1e08c61b7c
+Version: webpack 4.46.0
+Time: 1448ms
+Built at: 03/13/2021 3:27:23 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-02cfe918f99a9bb90255.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-02cfe918f99a9bb90255.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-02cfe918f99a9bb90255.js js/index-02cfe918f99a9bb90255.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2792ms (Views: 2791.9ms | ActiveRecord: 0.0ms | Allocations: 6130)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:27:24 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 5353)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:29:13 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 461945dc824fc664f0bc
+Version: webpack 4.46.0
+Time: 1315ms
+Built at: 03/13/2021 3:29:15 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-3020dca018dc613d728f.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-3020dca018dc613d728f.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-3020dca018dc613d728f.js js/index-3020dca018dc613d728f.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2705ms (Views: 2704.4ms | ActiveRecord: 0.0ms | Allocations: 6121)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:29:16 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 4531)
+
+
+Started POST "/api/v1/locations" for ::1 at 2021-03-13 15:31:02 -0500
+Processing by Api::V1::LocationsController#create as HTML
+  Parameters: {"location"=>{""=>"hello", "name"=>"america", "description"=>"note", "Trip_id"=>"1"}}
+Can't verify CSRF token authenticity.
+[31mUnpermitted parameter: :[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+  [1m[36mLocation Create (0.5ms)[0m  [1m[32mINSERT INTO "locations" ("name", "description", "Trip_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "america"], ["description", "note"], ["Trip_id", 1], ["created_at", "2021-03-13 20:31:02.214022"], ["updated_at", "2021-03-13 20:31:02.214022"]]
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/Api/V1/locations_controller.rb:8:in `create'
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 3.4ms | Allocations: 3884)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:47:43 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compilation failed:
+Hash: e511c4238b051b4d08da
+Version: webpack 4.46.0
+Time: 1219ms
+Built at: 03/13/2021 3:47:46 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-27a5bc5472e3e55e69ed.js   1.35 MiB        index  [emitted] [immutable]  index
+      js/index-27a5bc5472e3e55e69ed.js.map    1.5 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-27a5bc5472e3e55e69ed.js js/index-27a5bc5472e3e55e69ed.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 73 hidden modules
+
+ERROR in ./app/javascript/components/Trip/Trip.js
+Module build failed (from ./node_modules/babel-loader/lib/index.js):
+SyntaxError: /Users/calrider/Documents/GitHub/countries/app/javascript/components/Trip/Trip.js: 'return' outside of function (97:4)
+
+   95 |
+   96 |
+>  97 |     return  (
+      |     ^
+   98 |     <Wrapper>
+   99 |         {
+  100 |             loaded && 
+    at Object._raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:776:17)
+    at Object.raiseWithData (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:769:17)
+    at Object.raise (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:737:17)
+    at Object.parseReturnStatement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12556:12)
+    at Object.parseStatementContent (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12243:21)
+    at Object.parseStatement (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12195:17)
+    at Object.parseBlockOrModuleBlockBody (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12777:25)
+    at Object.parseBlockBody (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12768:10)
+    at Object.parseProgram (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12129:10)
+    at Object.parseTopLevel (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:12120:25)
+    at Object.parse (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:13836:10)
+    at parse (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/parser/lib/index.js:13889:38)
+    at parser (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/parser/index.js:54:34)
+    at parser.next (<anonymous>)
+    at normalizeFile (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/transformation/normalize-file.js:99:38)
+    at normalizeFile.next (<anonymous>)
+    at run (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/transformation/index.js:31:50)
+    at run.next (<anonymous>)
+    at Function.transform (/Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/transform.js:27:41)
+    at transform.next (<anonymous>)
+    at step (/Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:261:32)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:223:11)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:189:28
+    at /Users/calrider/Documents/GitHub/countries/node_modules/@babel/core/lib/gensync-utils/async.js:72:7
+    at /Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:113:33
+    at step (/Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:287:14)
+    at /Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:273:13
+    at async.call.result.err.err (/Users/calrider/Documents/GitHub/countries/node_modules/gensync/index.js:223:11)
+ @ ./app/javascript/components/App.js 7:0-31 30:15-19
+ @ ./app/javascript/packs/index.jsx
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2486ms (Views: 2485.6ms | ActiveRecord: 0.0ms | Allocations: 6041)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:48:53 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: acd7fe78a7d682edb8cb
+Version: webpack 4.46.0
+Time: 1467ms
+Built at: 03/13/2021 3:48:56 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-21f12a6c899d979cf401.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-21f12a6c899d979cf401.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-21f12a6c899d979cf401.js js/index-21f12a6c899d979cf401.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2855ms (Views: 2854.1ms | ActiveRecord: 0.0ms | Allocations: 6120)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:48:56 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 4587)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:49:27 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 0f3f375821d230738f6f
+Version: webpack 4.46.0
+Time: 1458ms
+Built at: 03/13/2021 3:49:29 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-581fbe8096e6fd38a559.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-581fbe8096e6fd38a559.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-581fbe8096e6fd38a559.js js/index-581fbe8096e6fd38a559.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2772ms (Views: 2771.3ms | ActiveRecord: 0.0ms | Allocations: 6124)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:49:30 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 4600)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:58:07 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 90ea961f9a93768cf0fe
+Version: webpack 4.46.0
+Time: 1484ms
+Built at: 03/13/2021 3:58:09 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-cd7ee1a8bce85a82b4e8.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-cd7ee1a8bce85a82b4e8.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-cd7ee1a8bce85a82b4e8.js js/index-cd7ee1a8bce85a82b4e8.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2903ms (Views: 2902.7ms | ActiveRecord: 0.0ms | Allocations: 6125)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:58:10 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.4ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.9ms | Allocations: 4619)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 15:58:35 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: a3f74c5895453f9567f3
+Version: webpack 4.46.0
+Time: 1396ms
+Built at: 03/13/2021 3:58:38 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-8de03ed0295419e266df.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-8de03ed0295419e266df.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-8de03ed0295419e266df.js js/index-8de03ed0295419e266df.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2777ms (Views: 2777.1ms | ActiveRecord: 0.0ms | Allocations: 6127)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 15:58:38 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 4573)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:15:54 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: ffc415823b2c188b5f7a
+Version: webpack 4.46.0
+Time: 1428ms
+Built at: 03/13/2021 4:15:57 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-a96ce081eaad423badd2.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-a96ce081eaad423badd2.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-a96ce081eaad423badd2.js js/index-a96ce081eaad423badd2.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3209ms (Views: 3208.4ms | ActiveRecord: 0.0ms | Allocations: 6122)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:15:57 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 19ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 4577)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:18:53 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 6cbc8cd1237c796dc811
+Version: webpack 4.46.0
+Time: 1425ms
+Built at: 03/13/2021 4:18:55 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-380efbcdab5ebfc8c557.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-380efbcdab5ebfc8c557.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-380efbcdab5ebfc8c557.js js/index-380efbcdab5ebfc8c557.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2820ms (Views: 2819.7ms | ActiveRecord: 0.0ms | Allocations: 6123)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:18:56 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.1ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 0.5ms | Allocations: 4558)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:19:12 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 4c907a959099d90f901b
+Version: webpack 4.46.0
+Time: 1413ms
+Built at: 03/13/2021 4:19:14 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-869ea998e3d0dca0f18d.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-869ea998e3d0dca0f18d.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-869ea998e3d0dca0f18d.js js/index-869ea998e3d0dca0f18d.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2801ms (Views: 2800.4ms | ActiveRecord: 0.0ms | Allocations: 6128)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:19:15 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4525)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:21:56 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 9af37f1a49be134cd994
+Version: webpack 4.46.0
+Time: 1405ms
+Built at: 03/13/2021 4:21:58 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-d225576e945b61fb7c56.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-d225576e945b61fb7c56.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-d225576e945b61fb7c56.js js/index-d225576e945b61fb7c56.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2798ms (Views: 2798.1ms | ActiveRecord: 0.0ms | Allocations: 6123)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:21:59 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.5ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 4665)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:22:30 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: d7a4b98fa850c5c71fc2
+Version: webpack 4.46.0
+Time: 1431ms
+Built at: 03/13/2021 4:22:33 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-9da419c2a6e0f1ec76ad.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-9da419c2a6e0f1ec76ad.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-9da419c2a6e0f1ec76ad.js js/index-9da419c2a6e0f1ec76ad.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2804ms (Views: 2803.7ms | ActiveRecord: 0.0ms | Allocations: 6129)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:22:33 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4525)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:23:38 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: a3cab0a87987a3b2c96c
+Version: webpack 4.46.0
+Time: 1393ms
+Built at: 03/13/2021 4:23:40 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-c9aeae83e4f6929712a6.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-c9aeae83e4f6929712a6.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-c9aeae83e4f6929712a6.js js/index-c9aeae83e4f6929712a6.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2776ms (Views: 2775.6ms | ActiveRecord: 0.0ms | Allocations: 6129)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:23:41 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (1.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 0.2ms | ActiveRecord: 1.7ms | Allocations: 4631)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:30:05 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 6ccd07b70b2cd6d3420f
+Version: webpack 4.46.0
+Time: 1400ms
+Built at: 03/13/2021 4:30:08 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-11357952c2b53122258a.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-11357952c2b53122258a.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-11357952c2b53122258a.js js/index-11357952c2b53122258a.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2791ms (Views: 2790.1ms | ActiveRecord: 0.0ms | Allocations: 6125)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:30:08 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 0.8ms | Allocations: 4602)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:40:10 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 141bebacd82c40fe716f
+Version: webpack 4.46.0
+Time: 1426ms
+Built at: 03/13/2021 4:40:12 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-3b4e02ace129d9ca8769.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-3b4e02ace129d9ca8769.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-3b4e02ace129d9ca8769.js js/index-3b4e02ace129d9ca8769.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2960ms (Views: 2959.3ms | ActiveRecord: 0.0ms | Allocations: 6167)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:40:13 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.4ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.9ms | Allocations: 4574)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:40:48 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 6a4d08f2b82e6522624c
+Version: webpack 4.46.0
+Time: 1405ms
+Built at: 03/13/2021 4:40:50 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-90823f49e33eaa94cabe.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-90823f49e33eaa94cabe.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-90823f49e33eaa94cabe.js js/index-90823f49e33eaa94cabe.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2797ms (Views: 2796.9ms | ActiveRecord: 0.0ms | Allocations: 6169)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:40:51 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 10ms (Views: 1.4ms | ActiveRecord: 0.5ms | Allocations: 4831)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:41:33 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 2adc29bde949d53c0cce
+Version: webpack 4.46.0
+Time: 1407ms
+Built at: 03/13/2021 4:41:36 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-a8873319ee7e8110bcbf.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-a8873319ee7e8110bcbf.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-a8873319ee7e8110bcbf.js js/index-a8873319ee7e8110bcbf.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2780ms (Views: 2780.0ms | ActiveRecord: 0.0ms | Allocations: 6159)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:41:36 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 16ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4637)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:43:43 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 7aa49d08bc73ab19b1fe
+Version: webpack 4.46.0
+Time: 1413ms
+Built at: 03/13/2021 4:43:46 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-56c8dc8a6c9f2da42825.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-56c8dc8a6c9f2da42825.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-56c8dc8a6c9f2da42825.js js/index-56c8dc8a6c9f2da42825.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2834ms (Views: 2833.4ms | ActiveRecord: 0.0ms | Allocations: 6164)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:43:46 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 22ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4879)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:44:02 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Everything's up-to-date. Nothing to do
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 25.0ms | ActiveRecord: 0.0ms | Allocations: 4921)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:44:02 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.1ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 5ms (Views: 0.1ms | ActiveRecord: 0.4ms | Allocations: 4535)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:45:50 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: c4f51f3749bde2910ec3
+Version: webpack 4.46.0
+Time: 1402ms
+Built at: 03/13/2021 4:45:52 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-e6044ea72312bced9fda.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-e6044ea72312bced9fda.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-e6044ea72312bced9fda.js js/index-e6044ea72312bced9fda.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2826ms (Views: 2825.7ms | ActiveRecord: 0.0ms | Allocations: 6159)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:45:53 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 4976)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:46:14 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: bdcd2b9582e3c2c1680a
+Version: webpack 4.46.0
+Time: 1402ms
+Built at: 03/13/2021 4:46:17 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-da227df8a10d10206ddf.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-da227df8a10d10206ddf.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-da227df8a10d10206ddf.js js/index-da227df8a10d10206ddf.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2795ms (Views: 2794.6ms | ActiveRecord: 0.0ms | Allocations: 6159)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:46:17 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.6ms | Allocations: 4701)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:47:53 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 7ca5ddd4ad7c148e85bd
+Version: webpack 4.46.0
+Time: 1412ms
+Built at: 03/13/2021 4:47:56 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-0b5ebadce8e8be4bdd6f.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-0b5ebadce8e8be4bdd6f.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-0b5ebadce8e8be4bdd6f.js js/index-0b5ebadce8e8be4bdd6f.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2823ms (Views: 2822.5ms | ActiveRecord: 0.0ms | Allocations: 6158)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:47:56 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4525)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:49:13 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 4b9d820dc9a9da1dce2d
+Version: webpack 4.46.0
+Time: 1411ms
+Built at: 03/13/2021 4:49:15 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-0071b4fb1a250061a6cc.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-0071b4fb1a250061a6cc.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-0071b4fb1a250061a6cc.js js/index-0071b4fb1a250061a6cc.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2788ms (Views: 2787.2ms | ActiveRecord: 0.0ms | Allocations: 6162)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:49:16 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4605)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:49:37 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 3febb95d9caeb8daa596
+Version: webpack 4.46.0
+Time: 1402ms
+Built at: 03/13/2021 4:49:40 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-bc126a7faf7895832a51.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-bc126a7faf7895832a51.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-bc126a7faf7895832a51.js js/index-bc126a7faf7895832a51.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2782ms (Views: 2781.4ms | ActiveRecord: 0.0ms | Allocations: 6165)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:49:40 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (11.7ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 17ms (Views: 0.1ms | ActiveRecord: 12.0ms | Allocations: 4528)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:50:26 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: fbdcc4a0090e7908a17f
+Version: webpack 4.46.0
+Time: 1405ms
+Built at: 03/13/2021 4:50:28 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-fd5573fb0845921352ee.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-fd5573fb0845921352ee.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-fd5573fb0845921352ee.js js/index-fd5573fb0845921352ee.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2783ms (Views: 2782.4ms | ActiveRecord: 0.0ms | Allocations: 6172)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:50:29 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 4575)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:50:46 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: 6a376218d2f4c1fc1abc
+Version: webpack 4.46.0
+Time: 1418ms
+Built at: 03/13/2021 4:50:48 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-4af1753ea3cae608dd9a.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-4af1753ea3cae608dd9a.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-4af1753ea3cae608dd9a.js js/index-4af1753ea3cae608dd9a.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 2831ms (Views: 2830.5ms | ActiveRecord: 0.0ms | Allocations: 6164)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:50:49 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.3ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.3ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 4684)
+
+
+Started GET "/trips/enchanting-europe" for ::1 at 2021-03-13 16:51:55 -0500
+Processing by PagesController#index as HTML
+  Parameters: {"path"=>"trips/enchanting-europe"}
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /Users/calrider/Documents/GitHub/countries/public/packs
+[Webpacker] Hash: fbdcc4a0090e7908a17f
+Version: webpack 4.46.0
+Time: 1497ms
+Built at: 03/13/2021 4:51:58 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-fb112fb92c8c70c1806e.js   70.9 KiB  application  [emitted] [immutable]  application
+js/application-fb112fb92c8c70c1806e.js.map   80.3 KiB  application  [emitted] [dev]        application
+          js/index-fd5573fb0845921352ee.js   1.37 MiB        index  [emitted] [immutable]  index
+      js/index-fd5573fb0845921352ee.js.map   1.51 MiB        index  [emitted] [dev]        index
+                             manifest.json  661 bytes               [emitted]              
+Entrypoint application = js/application-fb112fb92c8c70c1806e.js js/application-fb112fb92c8c70c1806e.js.map
+Entrypoint index = js/index-fd5573fb0845921352ee.js js/index-fd5573fb0845921352ee.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 211 bytes {application} [built]
+[./app/javascript/packs/application.js] 750 bytes {application} [built]
+[./app/javascript/packs/index.jsx] 1.02 KiB {index} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 905 bytes {index} [built]
+[./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
+    + 77 hidden modules
+
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 3083ms (Views: 3082.5ms | ActiveRecord: 0.0ms | Allocations: 6164)
+
+
+Started GET "/api/v1/trips/enchanting-europe" for ::1 at 2021-03-13 16:51:58 -0500
+Processing by Api::V1::TripsController#show as HTML
+  Parameters: {"slug"=>"enchanting-europe"}
+  [1m[36mTrip Load (0.2ms)[0m  [1m[34mSELECT "trips".* FROM "trips" WHERE "trips"."slug" = ? LIMIT ?[0m  [["slug", "enchanting-europe"], ["LIMIT", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:12:in `show'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "locations"."id" FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+  [1m[36mLocation Load (0.2ms)[0m  [1m[34mSELECT "locations".* FROM "locations" WHERE "locations"."trip_id" = ?[0m  [["trip_id", 1]]
+  ↳ app/controllers/Api/V1/trips_controller.rb:14:in `show'
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 0.6ms | Allocations: 4551)
+
+
