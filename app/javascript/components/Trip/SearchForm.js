@@ -63,8 +63,8 @@ const SearchButton = styled.button`
 
 
 const SearchForm = (props) =>{
-    const [query, setQuery] = useState ({})
-    const [response, setResponse] = useState ({})
+    const [value, setValue] = useState ({})
+   
 
     useEffect(()=>{
 
@@ -78,18 +78,18 @@ const SearchForm = (props) =>{
     const handleChange = (e) => {
         e.preventDefault()
         
-        setQuery(Object.assign({},query,{[e.target.name]: e.target.value}))
+        setValue(Object.assign({},value,{[e.target.name]: e.target.value}))
     
-        console.log('name', query)
+        console.log('value', value)
     }
-
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         
-      
-        const url = `https://restcountries.eu/rest/v2/name/${query}`
-        
-         axios.get(url)
+        console.log('value during submit', value)
+        const url = `https://restcountries.eu/rest/v2/name/` +value.value
+
+        axios.get(url)
         .then( resp => console.log(resp))
         .catch( resp => console.log(resp))
      console.log('submitted')
@@ -99,7 +99,7 @@ const SearchForm = (props) =>{
         <Wrapper>
             <form onSubmit={handleSubmit}>
                 <Headline>Search for a country</Headline>
-                <Field><input onChange={handleChange} value ={props.query} type="text" name="query" placeholder="Search"/></Field>
+                <Field><input onChange={handleChange} value ={props.value} type="text" name="value" placeholder="Search"/></Field>
                 <SearchButton>search</SearchButton>            
             </form>
         </Wrapper>

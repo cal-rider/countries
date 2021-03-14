@@ -12,13 +12,13 @@
     },
     "index": {
       "js": [
-        "/packs/js/index-fd5573fb0845921352ee.js"
+        "/packs/js/index-dd6537a881a71c3d410c.js"
       ],
       "js.map": [
-        "/packs/js/index-fd5573fb0845921352ee.js.map"
+        "/packs/js/index-dd6537a881a71c3d410c.js.map"
       ]
     }
   },
-  "index.js": "/packs/js/index-fd5573fb0845921352ee.js",
-  "index.js.map": "/packs/js/index-fd5573fb0845921352ee.js.map"
+  "index.js": "/packs/js/index-dd6537a881a71c3d410c.js",
+  "index.js.map": "/packs/js/index-dd6537a881a71c3d410c.js.map"
 }

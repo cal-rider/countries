@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   grid-template-columns: 1fr 2fr;
   
 `
-//grid-template-columns: repeat(2, 1fr);
 
 const Column = styled.div`
     background: #fff;
@@ -31,6 +30,7 @@ const Main = styled.div`
 const Trip = (props) => {
     const [trip, setTrip] = useState ({})
     const [location, setLocation] = useState({})
+    const [selection, setSelection] = useState()
     const[loaded, setLoaded] = useState(false)
 
   useEffect(()=>{
@@ -45,7 +45,18 @@ const Trip = (props) => {
         .catch( resp => console.log(resp))
     }, [])
 
-    //adds all changes to the location state so they will be there for submit
+    useEffect(()=>{
+        
+        const url = `https://restcountries.eu/rest/v2/all`
+
+        axios.get(url)
+        .then( resp => {
+            //need to call set location to current selection
+            console.log(resp)
+        })
+        .catch( resp => console.log(resp))
+    }, [selection])
+
 const handleChange = (e) => {
     e.preventDefault()
     
