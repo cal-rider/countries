@@ -31,7 +31,7 @@ const Main = styled.div`
 const Trip = (props) => {
     const [trip, setTrip] = useState ({})
     const [location, setLocation] = useState({})
-    const[loaded, setLoaded] = useState(false)
+    const [loaded, setLoaded] = useState(false)
 
   useEffect(()=>{
         const slug = props.match.params.slug

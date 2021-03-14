@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Component } from 'react'
+import React, { useState, useEffect } from 'react'
 import Select from 'react-select'
 import axios from 'axios'
 import styled from 'styled-components'
@@ -6,9 +6,8 @@ import styled from 'styled-components'
 const Selection = (props) => {
     const [countries, setCountries] = useState({})
     const [loaded, setLoaded] = useState(false)
+    const [selection, setSelection] = useState({})
     
-
-     
 
     useEffect(()=>{
         const url = `https://restcountries.eu/rest/v2/all`
@@ -17,8 +16,6 @@ const Selection = (props) => {
         .then( resp => {
             setCountries(resp.data)
             setLoaded(true)
-            
-            console.log(resp.data)
         })
         .catch( resp => console.log(resp))
     }, [])
@@ -33,6 +30,9 @@ const Selection = (props) => {
                     options={countries}
                     getOptionLabel={(option) => option.name}
                     getOptionValue={(option) => option.name}
+                    onChange={setSelection}
+                    placeholder="Search for a Country"
+                    isSearchable
                 />
             }
         </div>
