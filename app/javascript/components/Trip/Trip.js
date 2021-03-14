@@ -52,19 +52,18 @@ const handleChange = (e) => {
     
     setLocation(Object.assign({},location,{[e.target.name]: e.target.value}))
     
-    console.log('name', location)
+    console.log('location', location)
 }
 
 const handleSubmit = (e) => {
     e.preventDefault()
     
     location.Trip_id = trip.data.id
-    
+    console.log(location)
     axios.post('/api/v1/locations', {location})
     .then(resp => {
 
-        // Look into using the spread operator below to add Trip id to location like above, i think this is better syntax!!
-      const included =[...trip.included, resp.data.data]
+        const included =[...trip.included, resp.data.data]
       setTrip({...trip,included})
       setLocation({name: '', description:''})
     })
@@ -73,7 +72,15 @@ const handleSubmit = (e) => {
     
 }
 
+const handleSelect = (e) => {
 
+    //Why is updating the state of the location not working as it should with the hook?
+    //this is what is causing that very ugly error
+   // setLocation(Object.assign({},location,{[e.target.name]: e.target.value}))
+    location.name = e.name
+
+    //console.log(e.name)
+}
 
 
 //Add all of the existing locations they are called in the trip.included above
@@ -106,7 +113,9 @@ if (loaded && trip.included) {
                 </Column>
                 
                 <Column>
-                <Selection/>
+                <Selection
+                handleChange={handleSelect}
+                />
 
                     <LocationForm
                         handleChange={handleChange}

@@ -27,10 +27,11 @@ const Selection = (props) => {
             {
                 loaded &&
                 <Select
+                    name="name"
                     options={countries}
                     getOptionLabel={(option) => option.name}
                     getOptionValue={(option) => option.name}
-                    onChange={setSelection}
+                    onChange={props.handleChange}
                     placeholder="Search for a Country"
                     isSearchable
                 />
