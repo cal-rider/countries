@@ -5,6 +5,7 @@ import LocationForm from './LocationForm'
 import Location from './Location'
 import SearchForm from './SearchForm'
 import styled from 'styled-components'
+import Selection from './Selection'
 
 const Wrapper = styled.div`
   margin-left: auto;
@@ -30,7 +31,6 @@ const Main = styled.div`
 const Trip = (props) => {
     const [trip, setTrip] = useState ({})
     const [location, setLocation] = useState({})
-    const [selection, setSelection] = useState()
     const[loaded, setLoaded] = useState(false)
 
   useEffect(()=>{
@@ -45,17 +45,7 @@ const Trip = (props) => {
         .catch( resp => console.log(resp))
     }, [])
 
-    useEffect(()=>{
-        
-        const url = `https://restcountries.eu/rest/v2/all`
-
-        axios.get(url)
-        .then( resp => {
-            //need to call set location to current selection
-            console.log(resp)
-        })
-        .catch( resp => console.log(resp))
-    }, [selection])
+    
 
 const handleChange = (e) => {
     e.preventDefault()
@@ -116,7 +106,7 @@ if (loaded && trip.included) {
                 </Column>
                 
                 <Column>
-                <SearchForm/>
+                <Selection/>
 
                     <LocationForm
                         handleChange={handleChange}
