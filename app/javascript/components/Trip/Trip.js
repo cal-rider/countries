@@ -3,7 +3,6 @@ import axios from 'axios'
 import Header from './Header'
 import LocationForm from './LocationForm'
 import Location from './Location'
-import SearchForm from './SearchForm'
 import styled from 'styled-components'
 import Selection from './Selection'
 
@@ -27,7 +26,14 @@ const Column = styled.div`
 const Main = styled.div`
     padding-left: 50px;
 `
+const Headline = styled.div`
+    padding: 20px;
+    font-size: 25px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
 
+`
 const Trip = (props) => {
     const [trip, setTrip] = useState ({})
     const [location, setLocation] = useState({})
@@ -113,6 +119,7 @@ if (loaded && trip.included) {
                 </Column>
                 
                 <Column>
+                <Headline>Add a country to your trip?</Headline>
                 <Selection
                 handleChange={handleSelect}
                 />

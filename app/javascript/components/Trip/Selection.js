@@ -3,10 +3,26 @@ import Select from 'react-select'
 import axios from 'axios'
 import styled from 'styled-components'
 
+const Wrapper = styled.div`
+    background: #fff;
+    padding: 120px;
+    background: #000;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 18px;
+    padding: 12px;
+    width: 60%; 
+`
+
+const Center = styled.div`
+display: block;
+margin-left: 30%;
+
+`
+
 const Selection = (props) => {
     const [countries, setCountries] = useState({})
     const [loaded, setLoaded] = useState(false)
-    const [selection, setSelection] = useState({})
     
 
     useEffect(()=>{
@@ -22,21 +38,24 @@ const Selection = (props) => {
 
 
 
+
     return (
-        <div>
+        <Wrapper>
             {
                 loaded &&
-                <Select
-                    name="name"
-                    options={countries}
-                    getOptionLabel={(option) => option.name}
-                    getOptionValue={(option) => option.name}
-                    onChange={props.handleChange}
-                    placeholder="Search for a Country"
-                    isSearchable
-                />
+                <Center>
+                    <Select
+                        name="name"
+                        options={countries}
+                        getOptionLabel={(option) => option.name}
+                        getOptionValue={(option) => option.name}
+                        onChange={props.handleChange}
+                        placeholder="Search for a Country"
+                        isSearchable
+                    />
+                </Center>
             }
-        </div>
+        </Wrapper>
     )
 }
 export default Selection

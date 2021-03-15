@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+ .abc {
+    min-height: 30px;
+    margin: 12px 0;
+    padding: 12px;
+    width: 60%;
+    }

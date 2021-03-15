@@ -2,12 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 
-const Headline = styled.div`
-    padding: 20px;
-    font-size: 25px;
-    font-weight: bold;
-    color: #fff;
-`
+
 
 const Field = styled.div`
     border-radius: 4px;
@@ -42,7 +37,6 @@ const Wrapper = styled.div`
     border-radius: 4px;
     font-size: 18px;
     padding: 10px 0 10px 0;
-    border:1px solid #e6e6e6;
 `
 
 const AddButton = styled.button`
@@ -69,9 +63,7 @@ const LocationForm = (props) => {
     return (
         <Wrapper>    
             <form onSubmit={props.handleSubmit}>
-                <Headline>Add a country to your "{props.attributes.name}" trip?</Headline>
-                    
-                    <Field><input onChange={props.handleChange} value ={props.location.description} type="text" name="description" placeholder="Notes"/></Field>
+                <Field><input onChange={props.handleChange} value ={props.location.description} type="text" name="description" placeholder="Notes"/></Field>
                 <AddButton>Add Location</AddButton>
             </form>
         </Wrapper>
