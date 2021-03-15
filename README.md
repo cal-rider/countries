@@ -1,24 +1,31 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is a fun work in progress that helps you plan your trips around the word.
 
-Things you may want to cover:
 
-* Ruby version
+In it you can:
 
-* System dependencies
+* Viw what trips you have planned
 
-* Configuration
+* Select a new country to add to that trip
 
-* Database creation
 
-* Database initialization
 
-* How to run the test suite
+Technologies Used:
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby on Rails
 
-* Deployment instructions
+* React
 
-* ...
+* HTML & CSS
+
+* Consuming APIs
+
+
+Soon to come
+
+* Adding new trips
+
+* More Data about Countries
+
+* Multi user support
